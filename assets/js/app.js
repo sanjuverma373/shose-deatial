@@ -15,6 +15,7 @@ let count = 1
 let sub = document.getElementById("sub")
 let showNo = document.getElementById("showNo")
 let add = document.getElementById("add")
+let btn = document.getElementById("btn");
 
 
 
@@ -103,3 +104,19 @@ function openTab(evt, Id) {
     evt.currentTarget.className += " tabopen";
 }
 document.getElementById("tab-btn").click();
+
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    btn.style.display = "block";
+  } else {
+    btn.style.display = "none";
+  }
+}
+
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
